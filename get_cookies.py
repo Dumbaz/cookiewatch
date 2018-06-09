@@ -34,9 +34,10 @@ class Website_information(object):
 	def returnJSON(self):
 		data = {}
 		data['url'] = self.url
-		data['cookies'] = []
+		cookieslist = {}
 		for cookie in self.cookies:
-			data['cookies'].append(cookie.__dict__)
+			cookieslist[cookie.name] = cookie.__dict__
+		data['cookies'] = cookieslist
 		return json.dumps(data)
 
 
