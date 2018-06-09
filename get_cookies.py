@@ -4,7 +4,6 @@
 ___author___ = "www.github.com/Dumbaz"
 ___status___ = "Development"
 
-import logging
 import requests
 import json
 
@@ -51,14 +50,10 @@ def get_website_with_cookies(url):
 	except requests.exceptions.SSLError:
 		# Mismatch between www.domain and domain
 		thisclass.sslError = True
-		print("SSL Error for URL " + url)
 	except requests.exceptions.ConnectionError:
 		thisclass.connectionTimeout = True
-		print("There seems to be no connection to " + url)
 	except requests.exceptions.ReadTimeout:
 		thisclass.readTimeout = True
-		print("This " + url + " website keeps loading forever")
 	except requests.exceptions.TooManyRedirects:
 		thisclass.excessiveRedirects = True
-		print("These are a lot of redirects on " + url)
 	return thisclass
