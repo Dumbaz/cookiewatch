@@ -41,12 +41,6 @@ class Website_information(object):
 		return json.dumps(data)
 
 
-
-url = "http://www.bing.com"
-#url = "http://www.dotasource.de"
-url = "https://stackoverflow.com/questions/23110383/how-to-dynamically-build-a-json-object-with-python"
-
-
 def get_website_with_cookies(url):
 	thisclass = Website_information(url, [])
 	try:
@@ -68,11 +62,3 @@ def get_website_with_cookies(url):
 		thisclass.excessiveRedirects = True
 		print("These are a lot of redirects on " + url)
 	return thisclass
-
-#print(get_website_with_cookies(url))
-
-testclass = get_website_with_cookies(url)
-print(testclass.returnJSON())
-
-#for entry in domains_list:
-#	get_cookies(entry)

@@ -1,2 +1,3 @@
-docker-elk/*
+docker-elk/
 *.pyc
+.DS_Store
